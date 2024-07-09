@@ -8,7 +8,7 @@ import fs from "fs";
  })
 
 
- const uploadResult = async(localFilePath)=>{ 
+ const uploadOnCloudinary = async(localFilePath)=>{ 
     try {
         if(!localFilePath) return null
        const response =  await cloudinary.uploader.upload(
@@ -24,3 +24,5 @@ import fs from "fs";
         return null
     }
  }
+
+ export {uploadOnCloudinary}
