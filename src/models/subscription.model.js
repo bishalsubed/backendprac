@@ -14,4 +14,4 @@ const subscriptionSchema = new Schema({
     timestamps:true
 })
 
-const subscription = mongoose.model("subscription", subscriptionSchema)
+const Subscription = mongoose.model("Subscription", subscriptionSchema)
