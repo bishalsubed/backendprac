@@ -66,7 +66,7 @@ const updateTweet = asyncHandler(async (req, res) => {
             throw new ApiError(400, "Invalid tweetId format");
         }
         const {newTweet} = await req.body
-        const tweet = await Tweet.findById({tweetId})
+        const tweet = await Tweet.findById(tweetId)
         if (!tweet) {
             throw new ApiError(404, "Unable to find tweet")
         }
