@@ -63,6 +63,10 @@ const getSubscribedChannels = asyncHandler(async (req, res) => {
     const user = await User.findById(subscriberId)
     try {
         const suscribedChannels= await Subscription.find({subscriber:subscriberId})
+        return res.status(200).json(
+            new ApiResponse(200, suscribedChannels, "Subscribed Channels Obtained Successfully")
+        )
+
     } catch (error) {
         throw new ApiError(404,error?.message,"Can't fetch subscribed channels")
     }
